@@ -28,8 +28,15 @@ public class Wall implements Structure {
     }
 
 
-    public class Block implements CompositeBlock{
+    public static class Block implements CompositeBlock{
         String Collor, Material;
+        Block(String mat, String col){
+            this.Collor=col;
+            this.Material=mat;
+        }
+
+        public Block() {}
+
         @Override
         public String getColor() {
             return Collor;
@@ -49,5 +56,13 @@ public class Wall implements Structure {
             myList.add(bl);
             return (List<Block>) bl;
         }
+    }
+    public static void main(String args[]){
+        Wall wall = new Wall();
+        Block bl1 = new Block("beton", "szary");
+        Block bl2 = new Block("beton","szary");
+        Block bl3 = new Block("beton","grafit");
+
+
     }
 }
