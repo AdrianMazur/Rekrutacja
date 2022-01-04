@@ -62,7 +62,13 @@ public class Wall implements Structure {
         Block bl1 = new Block("beton", "szary");
         Block bl2 = new Block("beton","szary");
         Block bl3 = new Block("beton","grafit");
-
+        wall.blocks.add(bl1);
+        wall.blocks.add(bl2);
+        wall.blocks.add(bl3);
+        int counter = wall.count();
+        System.out.println("Liczba elementów: " + counter);
+        wall.findBlockByColor("Grafit");
+        wall.findBlocksByMaterial("beton");
 
     }
 }
