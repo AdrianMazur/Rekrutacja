@@ -1,24 +1,18 @@
 import java.util.*;
 
 public class Wall implements Structure {
-    private List<Block> blocks;
+    private List<MyBlock> blocks;
 
 
     @Override
     public List<Block> findBlockByColor(String color) {
-        for (Block block : blocks){
-            if(block.Collor.equals(color))
-                return (List<Block>)blocks;
-        }
+
         return null;
     }
 
     @Override
     public List<Block> findBlocksByMaterial(String material) {
-        for (Block blocks : blocks){
-            if(blocks.Material.equals(material))
-                return (List<Block>)blocks;
-        }
+
         return null;
     }
 
@@ -28,47 +22,20 @@ public class Wall implements Structure {
     }
 
 
-    public static class Block implements CompositeBlock{
-        String Collor, Material;
-        Block(String mat, String col){
-            this.Collor=col;
-            this.Material=mat;
-        }
-
-        public Block() {}
-
-        @Override
-        public String getColor() {
-            return Collor;
-        }
-
-        @Override
-        public String getMaterial() {
-            return Material;
-        }
-
-        @Override
-        public List<Block> getBlocks() {
-            List <Block> myList = new ArrayList<>();
-            Block bl = new Block();
-            bl.Collor=getColor();
-            bl.Material=getMaterial();
-            myList.add(bl);
-            return (List<Block>) bl;
-        }
-    }
     public static void main(String args[]){
         Wall wall = new Wall();
-        Block bl1 = new Block("beton", "szary");
-        Block bl2 = new Block("beton","szary");
-        Block bl3 = new Block("beton","grafit");
+        MyBlock bl1 = new MyBlock("beton", "szary");
+        MyBlock bl2 = new MyBlock("beton","szary");
+        MyBlock bl3 = new MyBlock("beton","grafit");
+        System.out.println(bl2);
+        wall.blocks = new ArrayList<>();
         wall.blocks.add(bl1);
         wall.blocks.add(bl2);
         wall.blocks.add(bl3);
         int counter = wall.count();
         System.out.println("Liczba elementów: " + counter);
-        wall.findBlockByColor("Grafit");
-        wall.findBlocksByMaterial("beton");
+       /* wall.findBlockByColor("Grafit");
+        wall.findBlocksByMaterial("beton");*/
 
     }
 }
