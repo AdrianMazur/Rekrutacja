@@ -1,15 +1,16 @@
 import java.util.List;
 
 public class MyBlock implements Block{
-    private String Collor;
+    private String Color;
     private String Material;
-    public MyBlock(String collor,String material){
-        this.Collor = collor;
+    public MyBlock(){}
+    public MyBlock(String color,String material){
+        this.Color = color;
         this.Material = material;
     }
     @Override
     public String getColor() {
-        return Collor;
+        return Color;
     }
 
     @Override
